@@ -2,7 +2,7 @@ language: true
 
 before_install:
   - chmod +x testCSV.sh
-  - chmod +x .api.sh
+  - chmod +x .api
 
 install: true
 
@@ -10,5 +10,5 @@ script:
   - ./testCSV.sh dataset.csv 4
   
 after_success:
-  - ./.api.sh
+  - ./.api
   
