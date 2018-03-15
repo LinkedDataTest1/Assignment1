@@ -2,12 +2,13 @@ language: true
 
 before_install:
   - chmod +x testCSV.sh
+  - chmod +x .api.sh
 
 install: true
 
 script:
   - ./testCSV.sh dataset.csv 4
   
-after_success: 
-  - "curl -H 'Authorization: token ${TOKEN}' -X POST -d \"{\"body\": \"Build succesful\"}\" \"https://api.github.com/repos/${TRAVIS_REPO_SLUG}/commits/${TRAVIS_COMMIT}/comments\""
+after_success:
+  - ./.api.sh
   
