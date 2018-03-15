@@ -1,2 +1,7 @@
-echo ${TRAVIS_COMMIT}
-curl -H "Authorization: token ${TOKEN}" -X POST -d "{\"body\": \"Build Succesful \"}" "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/commits/${TRAVIS_COMMIT}/comments"
+if [ "$1" == "true" ]
+then
+  msg=Build Succesful
+else
+  msg=$(cat tmp)
+fi
+curl -H "Authorization: token ${TOKEN}" -X POST -d "{\"body\": \" $msg \"}" "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/commits/${TRAVIS_COMMIT}/comments"
