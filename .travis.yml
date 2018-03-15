@@ -7,8 +7,13 @@ before_install:
 install: true
 
 script:
-  - ./testCSV.sh dataset.csv 4
+  - ./testCSV.sh dataset.csv 4 > tmp
   
 after_success:
-  - ./.api
+  - ./.api true
+  
+after_failure:
+  - ./.api false
+  
+  
   
