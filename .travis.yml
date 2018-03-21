@@ -1,13 +1,13 @@
 language: true
 
 before_install:
-  - chmod +x testCSV.sh
+  - chmod +x ./build/testCSV.sh
   - chmod +x .api
 
 install: true
 
 script:
-  - ./testCSV.sh dataset.csv 4 username+matricula.csv 2 > err
+  - ./build/testCSV.sh dataset.csv 4 username+matricula.csv 2 > err
   
 after_success:
   - ./.api true
