@@ -7,10 +7,8 @@
 #Exit Value: Number of errors found, 0 if the file was correct
 
 errors=0
-
-TOKEN1=8c073f6335e29d1
-TOKEN2=e06e0dbade3a8a78405449b5d
-username=$(curl -H "Authorization: token $TOKEN1$TOKEN2" -X GET "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/pulls/${TRAVIS_PULL_REQUEST}" | jq -r '.user.login')
+sleep 2
+username=$(curl -s -X GET "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/pulls/${TRAVIS_PULL_REQUEST}" | jq -r '.user.login')
 
 if [ ! -f "$username.csv" ]; then
   echo "File missing. Make sure it has the correct format" "$username.csv"
