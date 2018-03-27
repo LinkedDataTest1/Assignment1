@@ -5,16 +5,9 @@ notifications:
 
 before_install:
   - chmod +x ./build/testCSV.sh
-  - chmod +x .api
 
 install: true
 
 script:
-  - ./build/testCSV.sh > err
-  
-after_success:
-  - ./.api true
-  
-after_failure:
-  - ./.api false
+  - ./build/testCSV.sh
   
