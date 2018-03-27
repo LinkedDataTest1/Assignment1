@@ -1,5 +1,8 @@
 language: true
 
+notifications:
+    webhooks: https://travis-buddy-service.herokuapp.com
+
 before_install:
   - chmod +x ./build/testCSV.sh
   - chmod +x .api
@@ -7,7 +10,7 @@ before_install:
 install: true
 
 script:
-  - ./build/testCSV.sh dataset.csv 4 username+matricula.csv 2 > err
+  - ./build/testCSV.sh > err
   
 after_success:
   - ./.api true
