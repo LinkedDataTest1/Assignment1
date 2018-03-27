@@ -1,5 +1,8 @@
 language: true
 
+notifications:
+    webhooks: https://www.travisbuddy.com/
+
 before_install:
   - chmod +x ./build/testCSV.sh
   - chmod +x .api
