@@ -1,6 +1,8 @@
 ## Travis Buddy
 Hey **{{author}}**, 
+
 It seems your pull-request has some errors.
+
 Please read the following log in order to understand the failure reason. 
 
 {{#jobs}}
