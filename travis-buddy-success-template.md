@@ -1,2 +1,2 @@
 Hey **<%- author %>**, 
-Your changes looks good too me!
+The build was succesful!
