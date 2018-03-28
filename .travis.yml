@@ -3,10 +3,8 @@ language: true
 notifications:
     webhooks: https://travis-buddy-service.herokuapp.com
 
-before_install:
+before_script:
   - chmod +x ./build/testCSV.sh
-
-install: true
 
 script:
   - ./build/testCSV.sh
