@@ -1,1 +1,2 @@
-Very good!
+Hey **<%- author %>**, 
+Your changes looks good too me!
