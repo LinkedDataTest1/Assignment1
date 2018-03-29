@@ -1,2 +1,5 @@
-Hey **<%- author %>**, 
-The build was succesful!
+Hey **{{author}}**, 
+
+The build was completed succesfully.
+
+That means your assignment has no error.
